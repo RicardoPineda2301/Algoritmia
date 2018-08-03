@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\begin{document}
+\begin{flushleft}
+Ricardo Pineda
+
+20160164
+\end{flushleft}
+
+\begin{center}
+Laboratorio Alogoritmia 1
+\end{center}
+\textbf{Ejercicio 1} 
+
+\textbf{Input:}
+Secuencia de n Numeros A = [a1, a2, a3... an]
+
+\textbf{Output:}
+A[i] o nulo
+
+Asumiendo que el valor que buscamos esta dado por T:
+
+\begin{frame}
+
+    \begin{algorithm}[H]
+        \caption{Busqueda Lineal (Pseudo-Codigo)}
+        \begin{algorithmic}[1]
+        \State i = 0;
+        \For{$i < A.length$}
+        \If{i == T}
+        \State Return i;
+        \Else
+        \State i = i + 1;
+        \State return; 
+        \EndIf
+        \EndFor
+        \If{$ i > A.length$}
+        \State return null;
+        \EndIf
+        \end{algorithmic}
+    \end{algorithm}
+\end{frame}
+Entonces, el \textit{loop invariant} en este caso es que \textit{i} recorre la lista entera
+
+buscando \textit{T} y no se detiene hasta encontrarlo o hasta terminar de 
+
+recorrer la lista sin exito.
+
+\begin{flushleft}
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{Ejercicio 2} 
+\end{flushleft}
+
+Input: matriz A (n x m) y matriz B (m x p)
+
+Output: matriz C (n x p)
+\begin{flushleft}
+For i from 1 to n: ----------------------------------------------------- \textbf{n}
+
+	For j from 1 to p: ----------------------------------------------------- \textbf{n}
+	
+		{Let sum = 0} ------------------------------------------------------------\textbf{ c}
+		
+		For k from 1 to m: -----------------------------------------------------\textbf{n}
+		
+			Set sum <- sum + A[i][k] * B[k][j] --------------------------------- \textbf{c}
+			
+		Set C[i][j] <- sum -------------------------------------------------------- \textbf{c}
+		
+return C ------------------------------------------------------------------ \textbf{c}
+
+\textit{Running Time:} ---------------------------------------------------------\textbf{O($n^3$)}
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{Ejercicio 3}
+\end{flushleft}
+
+\textbf{Bubble Sort}
+
+El \textit{Worst-Case} de este algoritmo es \textbf{O($n^2$)}
+
+\begin{flushleft}
+Como se comparan \textit{Best-Case} y \textit{Worst-Case} de Bubble Sort e Insertion Sort:
+\end{flushleft} 
+
+\begin{flushleft}
+\textbf{Best-Case}
+\end{flushleft}
+
+En ambos casos, el Best-Case sucede cuando la lista ya esta ordenada, por lo que ambos algoritmos recorreran la lista entera sin tener que efectuar ningun cambio y por consiguiente, tardaran \textbf{O(n)} en hacerlo.
+
+\begin{flushleft}
+\textbf{Worst-Case}
+\end{flushleft}
+
+En ambos algoritmos se tendra el Worst-Case en el momento en el que querramos ordenar una lista que esta ordenada inversamente a como lo necesitamos ordenar. 
+
+Por consiguiente, ambos algoritmos tardaran \textbf{O($n^2$)} en ordenarlo correctamente puesto que deben de recorrer toda la lista por su manera de funcionar.
+\begin{flushleft}
+El \textbf{Bubble Sort} agarra los primeros dos y  los ordena, luego pasa al siguiente elemento y lo compara solo con el elemento previo, y los cambia de posicion si es necesario, luego pasa al siguiente y hace lo mismo hasta eventualmente recorrer la lista entera.
+
+Luego de esto, tiene que volver a hacer el mismo proceso ordenando los elementos de la manera correcta hasta que todos queden ordenados.
+
+Cabe mencionar que Bubble Sort no tiene la capacidad de \textit{saber} cuando la lista este ordenada, por lo que tendra que recorrer la lista entera al menos una vez incluso ya estando ordenada.
+\end{flushleft}
+
+\begin{flushleft}
+El \textbf{Insertion Sort} al igual que el Bubble Sort tiene que recorrer toda la lista, solo que en vez de ir por parejas, compara el siguiente elemento con los elementos que ya ha ordenado, poniendolo asi en la posicion correcta.
+Debe de hacer eso con todos los elementos por lo que recorre la lista entera.
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{Diferencias: }
+\end{flushleft}
+1. El Insertion Sort es mas rapido al detectar que la lista ya esta ordenada.
+2. El Bubble Sort recorre la lista varias veces cuando no esta ordenada, mientras que Insertion Sort solo necesita hacerlo una vez.
+\end{document}
